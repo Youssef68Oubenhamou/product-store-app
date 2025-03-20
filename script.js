@@ -30,6 +30,7 @@ const products = [
 
 // Declaring all needed variables as constants !
 const mainSection = document.getElementById("main-section");
+const searchBar = document.getElementById("search");
 const searchBtn = document.getElementById("search-btn");
 
 for (let i = 0; i < products.length; i++) {
@@ -45,8 +46,35 @@ for (let i = 0; i < products.length; i++) {
 
 }
 
-searchBtn.addEventListener("click" , function() {
+if (searchBtn) {
 
-    let filteredProducts = products.filter();
+    searchBtn.addEventListener("click" , function() {
+    
+        let filteredProducts = products.filter((item) => {
 
-})
+            return item.title.toLowerCase() === searchBar.value.toLowerCase();
+
+        });
+    
+        mainSection.innerHTML = "";
+
+        console.log(mainSection.innerHTML);
+    
+        for (let i = 0; i < filteredProducts.length; i++) {
+    
+            let card = document.createElement('div');
+            card.className = "product-card";
+            card.innerHTML += `<img src="${filteredProducts[i].image}" alt="This is a product image...">`;
+            card.innerHTML += `<h2>${filteredProducts[i].title}</h2>`;
+            card.innerHTML += `<p>There is only ${filteredProducts[i].stock} of the product in the stock.</p>`;
+            card.innerHTML += `<div class="btn-container"><button>$ ${filteredProducts[i].price}</button><button>+</button></div>`;
+        
+            mainSection.append(card);
+        
+        }
+
+        console.log(filteredProducts);
+    
+    })
+
+}
