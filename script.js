@@ -1,4 +1,4 @@
-// This Object will act like a database !
+// This Object act like a database !
 const products = [
 
     {
@@ -32,6 +32,11 @@ const products = [
 const mainSection = document.getElementById("main-section");
 const searchBar = document.getElementById("search");
 const searchBtn = document.getElementById("search-btn");
+const addBtn = document.getElementById("add-product");
+const title = document.getElementById("title-input");
+const stock = document.getElementById("stock-input");
+const price = document.getElementById("price-input");
+const image = document.getElementById("image-input");
 
 for (let i = 0; i < products.length; i++) {
 
@@ -76,5 +81,26 @@ if (searchBtn) {
         console.log(filteredProducts);
     
     })
+
+}
+
+if (addBtn) {
+
+    addBtn.addEventListener("click" , function() {
+
+        products.push(
+            {
+
+                title: title.value,
+                stock: parseInt(stock.value),
+                price: parseInt(price.value),
+                image: `./uploads/${image.value}`
+
+            }
+        );
+
+        console.log(products);
+
+    });
 
 }
