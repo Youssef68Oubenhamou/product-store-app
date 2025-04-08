@@ -1,32 +1,47 @@
 // This Object act like a database !
-const products = [
+// const products = [
+//     {
 
-    {
+//         title: "Coffee Cappucino",
+//         stock: 10,
+//         price: 10,
+//         image: "./uploads/cappucino.webp"
 
-        title: "Coffee Cappucino",
-        stock: 10,
-        price: 10,
-        image: "./uploads/cappucino.webp"
+//     },
+//     {
 
-    },
-    {
+//         title: "Couscous Meal",
+//         stock: 8,
+//         price: 15,
+//         image: "./uploads/couscous.jpg"
 
-        title: "Couscous Meal",
-        stock: 8,
-        price: 15,
-        image: "./uploads/couscous.jpg"
+//     },
+//     {
 
-    },
-    {
+//         title: "Tajine Meal",
+//         stock: 12,
+//         price: 13,
+//         image: "./uploads/tajine.jpg"
 
-        title: "Tajine Meal",
-        stock: 12,
-        price: 13,
-        image: "./uploads/tajine.jpg"
+//     }
+// ];
 
-    }
+fetch("../database.json")
+.then((res) => {
 
-];
+    !res.ok ? new Error(`HTTP error ${res.status}`) : console.log(res.json);
+
+})
+.then((res) => {
+
+    console.log(res);
+
+})
+.catch((err) => {
+
+    console.log(err);
+
+})
 
 // Declaring all needed variables as constants !
 const mainSection = document.getElementById("main-section");
@@ -38,69 +53,48 @@ const stock = document.getElementById("stock-input");
 const price = document.getElementById("price-input");
 const image = document.getElementById("image-input");
 
-for (let i = 0; i < products.length; i++) {
+// for (let i = 0; i < products.length; i++) {
 
-    let card = document.createElement('div');
-    card.className = "product-card";
-    card.innerHTML += `<img src="${products[i].image}" alt="This is a product image...">`;
-    card.innerHTML += `<h2>${products[i].title}</h2>`;
-    card.innerHTML += `<p>There is only ${products[i].stock} of the product in the stock.</p>`;
-    card.innerHTML += `<div class="btn-container"><button>$ ${products[i].price}</button><button>+</button></div>`;
+//     let card = document.createElement('div');
+//     card.className = "product-card";
+//     card.innerHTML += `<img src="${products[i].image}" alt="This is a product image...">`;
+//     card.innerHTML += `<h2>${products[i].title}</h2>`;
+//     card.innerHTML += `<p>There is only ${products[i].stock} of the product in the stock.</p>`;
+//     card.innerHTML += `<div class="btn-container"><button>$ ${products[i].price}</button><button>+</button></div>`;
 
-    mainSection.append(card);
+//     mainSection.append(card);
 
-}
+// }
 
-if (searchBtn) {
+// if (searchBtn) {
 
-    searchBtn.addEventListener("click" , function() {
+//     searchBtn.addEventListener("click" , function() {
     
-        let filteredProducts = products.filter((item) => {
+//         let filteredProducts = products.filter((item) => {
 
-            return item.title.toLowerCase() === searchBar.value.toLowerCase();
+//             return item.title.toLowerCase() === searchBar.value.toLowerCase();
 
-        });
+//         });
     
-        mainSection.innerHTML = "";
+//         mainSection.innerHTML = "";
 
-        console.log(mainSection.innerHTML);
+//         console.log(mainSection.innerHTML);
     
-        for (let i = 0; i < filteredProducts.length; i++) {
+//         for (let i = 0; i < filteredProducts.length; i++) {
     
-            let card = document.createElement('div');
-            card.className = "product-card";
-            card.innerHTML += `<img src="${filteredProducts[i].image}" alt="This is a product image...">`;
-            card.innerHTML += `<h2>${filteredProducts[i].title}</h2>`;
-            card.innerHTML += `<p>There is only ${filteredProducts[i].stock} of the product in the stock.</p>`;
-            card.innerHTML += `<div class="btn-container"><button>$ ${filteredProducts[i].price}</button><button>+</button></div>`;
+//             let card = document.createElement('div');
+//             card.className = "product-card";
+//             card.innerHTML += `<img src="${filteredProducts[i].image}" alt="This is a product image...">`;
+//             card.innerHTML += `<h2>${filteredProducts[i].title}</h2>`;
+//             card.innerHTML += `<p>There is only ${filteredProducts[i].stock} of the product in the stock.</p>`;
+//             card.innerHTML += `<div class="btn-container"><button>$ ${filteredProducts[i].price}</button><button>+</button></div>`;
         
-            mainSection.append(card);
+//             mainSection.append(card);
         
-        }
+//         }
 
-        console.log(filteredProducts);
+//         console.log(filteredProducts);
     
-    })
+//     })
 
-}
-
-if (addBtn) {
-
-    addBtn.addEventListener("click" , function() {
-
-        products.push(
-            {
-
-                title: title.value,
-                stock: parseInt(stock.value),
-                price: parseInt(price.value),
-                image: `./uploads/${image.value}`
-
-            }
-        );
-
-        console.log(products);
-
-    });
-
-}
+// }

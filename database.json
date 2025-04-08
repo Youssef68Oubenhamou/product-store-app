@@ -2,7 +2,30 @@
 
     "products": [
 
-        
+        {
+
+            "title": "Coffee Cappucino",
+            "stock": 10,
+            "price": 10,
+            "image": "./uploads/cappucino.webp"
+    
+        },
+        {
+    
+            "title": "Couscous Meal",
+            "stock": 8,
+            "price": 15,
+            "image": "./uploads/couscous.jpg"
+    
+        },
+        {
+    
+            "title": "Tajine Meal",
+            "stock": 12,
+            "price": 13,
+            "image": "./uploads/tajine.jpg"
+    
+        }
 
     ],
     "users": [
