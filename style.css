@@ -21,15 +21,19 @@ body {
             align-items: flex-start;
             height: 300px;
             width: 200px;
-            background-color: whitesmoke;
+            background-color: rgb(175, 171, 171);
+            border-radius: 10px;
 
             li {
 
                 list-style-type: none;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+                font-size: 18px;
 
                 a {
 
                     text-decoration: none;
+                    color: black;
 
                 }
 
