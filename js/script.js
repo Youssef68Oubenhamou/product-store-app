@@ -26,22 +26,44 @@
 //     }
 // ];
 
-fetch("../database.json")
-.then((res) => {
 
-    !res.ok ? new Error(`HTTP error ${res.status}`) : console.log(res.json);
+// fetch("http://localhost:3000/products" , {
 
-})
-.then((res) => {
+//     method: 'GET',
+//     headers: {
 
-    console.log(res);
+//         "Content-type": "application/json",
 
-})
-.catch((err) => {
+//     },
 
-    console.log(err);
+// })
+//     .then(res => {
 
-})
+//         res.json();
+
+//     })
+//     .then(data => {
+
+//         console.log(data.text());
+
+//     })
+//     .catch((err) => {
+
+//         console.log(err);
+
+//     })
+
+async function getProducts() {
+
+    const response = await fetch("http://localhost:3000/products");
+    
+    const data = await response.json();
+
+    console.log(data[0]);
+
+}
+
+getProducts();
 
 // Declaring all needed variables as constants !
 const mainSection = document.getElementById("main-section");
