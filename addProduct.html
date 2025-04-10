@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>add products</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="addProductStyle.css">
+    </head>
+    <body>
+        
+        <nav>
+            <i class="fa-solid fa-bars fa-xl" id="menu"></i>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Favorites</a></li>
+                <li><a href="#add-products">Add Products</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" name="search" id="search" placeholder="Search For Products..." disabled>
+                <i class="fas fa-search fa-lg" id="search-btn"></i>
+                <i class="fa fa-shopping-basket fa-lg basket-btn" aria-hidden="true"></i>
+            </div>
+        </nav>
+        <main id="form-section">
+            <section id="form">
+                <div class="title">
+                    <label for="title-input">Title : </label>
+                    <input type="text" name="title-input" id="title-input" placeholder="Enter the product title...">
+                </div>
+                <div class="stock">
+                    <label for="stock-input">Stock : </label>
+                    <input type="text" name="stock-input" id="stock-input" placeholder="Enter the product stock number...">
+                </div>
+                <div class="price">
+                    <label for="price-input">Price : </label>
+                    <input type="text" name="price-input" id="price-input" placeholder="Enter the product price...">
+                </div>
+                <div class="image">
+                    <label for="image-input">Image : </label>
+                    <input type="file" name="image" id="image-input">
+                </div>
+                <button id="add-product">Add Product</button>
+            </section>
+        </main>
+
+    </body>
+</html>
