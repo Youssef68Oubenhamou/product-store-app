@@ -82,8 +82,8 @@ body {
         justify-content: center;
         margin-top: 4%;
         flex-wrap: wrap;
-        gap: 5px;
-        height: 200vh;
+        gap: 20px;
+        height: 100%;
 
         .product-card {
 

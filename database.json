@@ -1,37 +1,33 @@
 {
-
-    "products": [
-
-        {
-
-            "title": "Coffee Cappucino",
-            "stock": 10,
-            "price": 10,
-            "image": "./uploads/cappucino.webp"
-    
-        },
-        {
-    
-            "title": "Couscous Meal",
-            "stock": 8,
-            "price": 15,
-            "image": "./uploads/couscous.jpg"
-    
-        },
-        {
-    
-            "title": "Tajine Meal",
-            "stock": 12,
-            "price": 13,
-            "image": "./uploads/tajine.jpg"
-    
-        }
-
-    ],
-    "users": [
-
-
-
-    ]
-
+  "products": [
+    {
+      "title": "Coffee Cappucino",
+      "stock": 10,
+      "price": 10,
+      "image": "./uploads/cappucino.webp",
+      "id": 1
+    },
+    {
+      "title": "Couscous Meal",
+      "stock": 8,
+      "price": 15,
+      "image": "./uploads/couscous.jpg",
+      "id": 2
+    },
+    {
+      "title": "Tajine Meal",
+      "stock": 12,
+      "price": 13,
+      "image": "./uploads/tajine.jpg",
+      "id": 3
+    },
+    {
+      "title": "pizza",
+      "stock": 5,
+      "price": 20,
+      "image": "./uploads/tajine.jpg",
+      "id": 4
+    }
+  ],
+  "users": []
 }
