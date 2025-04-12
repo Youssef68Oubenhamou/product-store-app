@@ -1,67 +1,28 @@
 {
   "products": [
     {
-      "title": "Coffee Cappucino",
-      "stock": 10,
-      "price": 10,
-      "image": "./uploads/cappucino.webp",
-      "id": "1"
-    },
-    {
-      "title": "Couscous Meal",
-      "stock": 8,
-      "price": 15,
-      "image": "./uploads/couscous.jpg",
-      "id": "2"
-    },
-    {
-      "title": "Tajine Meal",
-      "stock": 12,
-      "price": 13,
-      "image": "./uploads/tajine.jpg",
-      "id": "3"
-    },
-    {
-      "title": "pizza",
-      "stock": 5,
-      "price": 20,
-      "image": "./uploads/tajine.jpg",
-      "id": "4"
-    },
-    {
-      "id": "5",
-      "title": "Fajitas",
-      "stock": "20",
-      "price": "13",
-      "image": "./uploads/gap-code.png"
-    },
-    {
-      "id": "3285",
-      "title": "Burger",
+      "id": "7f7d",
+      "title": "Shawarma",
       "stock": "10",
-      "price": "10",
-      "image": "./uploads/nosql.png"
-    },
-    {
-      "id": "5f81",
-      "title": "Shawarma",
-      "stock": "22",
       "price": "15",
-      "image": "./uploads/grid-area.png"
+      "image": "./uploads/shawarma1.png",
+      "favorite": false
     },
     {
-      "id": "7da0",
-      "title": "Salade",
-      "stock": "25",
-      "price": "18",
-      "image": "./uploads/grid-gap-code.png"
-    },
-    {
-      "id": "8cad",
-      "title": "Shawarma",
-      "stock": "30",
+      "id": "80b5",
+      "title": "Burger",
+      "stock": "22",
       "price": "19",
-      "image": "./uploads/grid-sys.png"
+      "image": "./uploads/burger1.jpg",
+      "favorite": false
+    },
+    {
+      "id": "526c",
+      "title": "union shawarma",
+      "stock": "20",
+      "price": "18",
+      "image": "./uploads/shawarma2.jpg",
+      "favorite": false
     }
   ],
   "users": []

@@ -11,13 +11,6 @@ image.addEventListener("change" , (e) => {
     const files = e.target.files;
     const fileName = files[0].name;
     imageName = fileName;
-    const file_reader = new FileReader();
-    file_reader.addEventListener("load" , () => {
-
-        const uploaded_image = file_reader.result;
-
-    })
-    file_reader.readAsDataURL(this.files[0]);
 
 });
 
@@ -32,7 +25,8 @@ addBtn.addEventListener("click" , function () {
                 title: title.value,
                 stock: stock.value,
                 price: price.value,
-                image: `./uploads/${imageName}`
+                image: `./uploads/${imageName}`,
+                favorite: false
         
             }
             fetch("http://localhost:3000/products",
@@ -50,7 +44,7 @@ addBtn.addEventListener("click" , function () {
                 })
                 .then((response) => {
         
-                    console.log(response)
+                    console.log(response);
                 
                 })
                 .catch((err) => {
