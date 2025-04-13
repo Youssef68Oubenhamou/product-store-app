@@ -26,65 +26,68 @@ async function getProducts() {
 }
 
 function displayProducts(res) {
-
-    let i;
     
-    for (i = 0; i < res.length; i++) {
+    res.forEach((product) => {
         let card = document.createElement("div");
         card.className = "product-card";
-        card.innerHTML += `<img src="${res[i].image}" alt="This is a product image...">`;
-        card.innerHTML += `<h2>${res[i].title}</h2>`;
-        card.innerHTML += `<p>There is only ${res[i].stock} of the product in the stock.</p>`;
-        card.innerHTML += `<div class="btn-container"><button>$ ${res[i].price}</button><button>+</button></div>`;
+        card.innerHTML += `<img src="${product.image}" alt="This is a product image...">`;
+        card.innerHTML += `<h2>${product.title}</h2>`;
+        card.innerHTML += `<p>There is only ${product.stock} of the product in the stock.</p>`;
+        card.innerHTML += `<div class="btn-container"><button>$ ${product.price}</button><button>+</button></div>`;
     
         let favArea = document.createElement("div");
-        if (res[i].favorite) {
+        favArea.className = "heart";
+        if (product.favorite) {
 
-            favArea.innerHTML = `<i id="sol" class="fa-solid fa-heart fa-lg" style="margin-left: 90%;"></i>`;
+            favArea.innerHTML = `<i class="fa-solid fa-heart fa-lg" style="margin-left: 90%;"></i>`;
 
         } else {
 
-            favArea.innerHTML = `<i id="reg" class="fa-regular fa-heart fa-lg" style="margin-left: 90%"></i>`;
+            favArea.innerHTML = `<i class="fa-regular fa-heart fa-lg" style="margin-left: 90%"></i>`;
 
         }
+
         card.appendChild(favArea);
         mainSection.append(card);
 
-        let icon = document.getElementById("reg");
-        icon.addEventListener("click" , function () {
+        const heartIcon = favArea.querySelector("i");
 
-            fetch(`http://localhost:3000/products/${res[i].id}` , {
+        heartIcon.addEventListener("click" , async function() {
 
-                method: "PATCH",
+            const favStatus = !product.favorite;
+
+            fetch(`http://localhost:3000/products/${product.id}` , {
+
+                method: 'PATCH',
                 body: JSON.stringify({
-                    favorite: true
-                }),
-                headers: {
-
-                    "Content-type": "application/json; charset=UTF-8"
-
-                }
+                    favorite: favStatus
+                })
                 
             })
-                .then((res) => {
-
-                    return res.json();
-
+                .then((response) => {
+            
+                    response.json();
+            
                 })
                 .then((data) => {
+            
+                    if (data.ok) {
 
-                    console.log(data.status);
+                        heartIcon.classList.toggle("fa-solid");
+                        product.favorite = favStatus;
 
+                    }
+            
                 })
                 .catch((err) => {
-
+            
                     console.log(`An Error Occured when Updating a property ${err.message}`);
-
+            
                 })
 
-        })
+        });
 
-    }
+    });
 
 }
 
