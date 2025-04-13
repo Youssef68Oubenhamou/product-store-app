@@ -41,5 +41,10 @@
       "favorite": true
     }
   ],
+  "globalPriceState":[
+    {
+      "priceState": 0
+    }
+  ],
   "users": []
 }

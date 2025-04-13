@@ -84,6 +84,20 @@ body {
         flex-wrap: wrap;
         gap: 20px;
         height: 100%;
+        position: relative;
+
+        .total-payment {
+
+            position: fixed;
+            z-index: 999;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: skyblue;
+            right: 3%;
+            top: 9%;
+
+        }
 
         .product-card {
 
