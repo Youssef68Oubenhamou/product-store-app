@@ -6,6 +6,7 @@ const title = document.getElementById("title-input");
 const stock = document.getElementById("stock-input");
 const price = document.getElementById("price-input");
 const image = document.getElementById("image-input");
+const totalPayment = document.getElementById("total-payment");
 // This Object act like a database !
 
 async function getProducts() {
@@ -20,13 +21,22 @@ async function getProducts() {
 
             displayProducts(response);
             searchedButtons(response);
+            showTotalPrice();
         
         })
 
 }
 
+function showTotalPrice() {
+
+    totalPayment.textContent = localStorage.getItem('globalPriceState');
+
+}
+
 function displayProducts(res) {
     
+    let sum = 0;
+
     res.forEach((product) => {
         let card = document.createElement("div");
         card.className = "product-card";
@@ -53,14 +63,10 @@ function displayProducts(res) {
         const heartIcon = favArea.querySelector("i");
 
         const addPriceBtn = document.getElementById("add-price");
+        
+        addPriceBtn.addEventListener("click" , function () {
 
-        addPriceBtn.addEventListener("click" , async function () {
-
-            fetch(`http://localhost:3000/globalPriceState` , {
-
-                method: 'PATCH',
-                
-            })
+            localStorage.setItem("globalPriceState" , sum += product.price);
 
         })
 

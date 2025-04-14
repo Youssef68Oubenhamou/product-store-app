@@ -30,7 +30,7 @@
       "stock": "20",
       "price": "19",
       "image": "./uploads/tajine.jpg",
-      "favorite": false
+      "favorite": true
     },
     {
       "id": "0432",
@@ -39,11 +39,6 @@
       "price": "6",
       "image": "./uploads/cocacola.jpg",
       "favorite": true
-    }
-  ],
-  "globalPriceState":[
-    {
-      "priceState": 0
     }
   ],
   "users": []
