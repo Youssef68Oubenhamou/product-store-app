@@ -26,17 +26,22 @@ async function getProducts() {
 
 }
 
-function showTotalPrice() {
+function showTotalPrice(res) {
 
+    let sum = 0;
 
+    res.forEach((pro) => {
 
+        sum += pro.totalPrice;
+
+    })
+
+    totalPayment.innerHTML = `$ ${sum}`;
 
 }
 
 function displayProducts(res) {
     
-    let sum = 0;
-
     res.forEach((product) => {
         let card = document.createElement("div");
         card.className = "product-card";
@@ -60,13 +65,46 @@ function displayProducts(res) {
         card.appendChild(favArea);
         mainSection.append(card);
 
+        showTotalPrice(res);
+
         const heartIcon = favArea.querySelector("i");
 
-        const addPriceBtn = document.getElementById("add-price");
+        const addPriceBtn = card.querySelector("#add-price");
         
-        addPriceBtn.addEventListener("click" , function () {
+        addPriceBtn.addEventListener("click" , async function () {
 
-            
+            if (product.totalPrice < (product.price * product.stock)) {
+
+                console.log("The button is clicked !");
+
+                fetch(`http://localhost:3000/products/${product.id}` , {
+
+                    method: 'PATCH',
+                    body: JSON.stringify({
+                        totalPrice: parseInt(product.totalPrice) + parseInt(product.price)
+                    })
+                    
+                })
+                    .then((res) => {
+
+                        res.json();
+
+                    })
+                    .then((data) => {
+
+                        if (data.ok) {
+
+                            product.totalPrice = parseInt(product.totalPrice) + parseInt(product.price);
+
+                        }
+
+                    })
+                    .catch((err) => {
+
+                        console.log(`An Error Occured when updating the property , ${err.message}`);
+
+                    })
+            }
 
         })
 

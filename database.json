@@ -6,7 +6,8 @@
       "stock": "10",
       "price": "15",
       "image": "./uploads/shawarma1.png",
-      "favorite": true
+      "favorite": true,
+      "totalPrice": 150
     },
     {
       "id": "80b5",
@@ -14,8 +15,8 @@
       "stock": "22",
       "price": "19",
       "image": "./uploads/burger1.jpg",
-      "favorite": false,
-      "totalPrice": 0
+      "favorite": true,
+      "totalPrice": 19
     },
     {
       "id": "526c",
@@ -24,7 +25,7 @@
       "price": "18",
       "image": "./uploads/shawarma2.jpg",
       "favorite": true,
-      "totalPrice": 0
+      "totalPrice": 18
     },
     {
       "id": "5eee",
@@ -42,7 +43,7 @@
       "price": "6",
       "image": "./uploads/cocacola.jpg",
       "favorite": false,
-      "totalPrice": 0
+      "totalPrice": 120
     },
     {
       "id": "3d17",
