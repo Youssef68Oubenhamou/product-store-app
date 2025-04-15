@@ -21,7 +21,6 @@ async function getProducts() {
 
             displayProducts(response);
             searchedButtons(response);
-            showTotalPrice();
         
         })
 
@@ -29,7 +28,8 @@ async function getProducts() {
 
 function showTotalPrice() {
 
-    totalPayment.textContent = localStorage.getItem('globalPriceState');
+
+
 
 }
 
@@ -66,7 +66,7 @@ function displayProducts(res) {
         
         addPriceBtn.addEventListener("click" , function () {
 
-            localStorage.setItem("globalPriceState" , sum += product.price);
+            
 
         })
 
@@ -91,7 +91,7 @@ function displayProducts(res) {
             
                     if (data.ok) {
 
-                        heartIcon.classList.toggle("fa-solid");
+                        // heartIcon.classList.toggle("fa-solid");
                         product.favorite = favStatus;
 
                     }

@@ -26,7 +26,8 @@ addBtn.addEventListener("click" , function () {
                 stock: stock.value,
                 price: price.value,
                 image: `./uploads/${imageName}`,
-                favorite: false
+                favorite: false,
+                totalPrice: 0
         
             }
             fetch("http://localhost:3000/products",
