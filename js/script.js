@@ -73,14 +73,13 @@ function displayProducts(res) {
         
         addPriceBtn.addEventListener("click" , async function () {
 
-            if (product.totalPrice < (product.price * product.stock)) {
-
-                console.log("The button is clicked !");
+            if (product.stock != 0) {
 
                 fetch(`http://localhost:3000/products/${product.id}` , {
 
                     method: 'PATCH',
                     body: JSON.stringify({
+                        stock: parseInt(product.stock) - 1,
                         totalPrice: parseInt(product.totalPrice) + parseInt(product.price)
                     })
                     

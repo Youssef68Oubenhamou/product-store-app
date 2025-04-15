@@ -7,7 +7,7 @@
       "price": "15",
       "image": "./uploads/shawarma1.png",
       "favorite": true,
-      "totalPrice": 150
+      "totalPrice": 0
     },
     {
       "id": "80b5",
@@ -15,8 +15,8 @@
       "stock": "22",
       "price": "19",
       "image": "./uploads/burger1.jpg",
-      "favorite": true,
-      "totalPrice": 19
+      "favorite": false,
+      "totalPrice": 0
     },
     {
       "id": "526c",
@@ -24,8 +24,8 @@
       "stock": "20",
       "price": "18",
       "image": "./uploads/shawarma2.jpg",
-      "favorite": true,
-      "totalPrice": 18
+      "favorite": false,
+      "totalPrice": 0
     },
     {
       "id": "5eee",
@@ -33,17 +33,17 @@
       "stock": "20",
       "price": "19",
       "image": "./uploads/tajine.jpg",
-      "favorite": true,
+      "favorite": false,
       "totalPrice": 0
     },
     {
       "id": "0432",
       "title": "coca cola",
-      "stock": "20",
+      "stock": 17,
       "price": "6",
       "image": "./uploads/cocacola.jpg",
-      "favorite": false,
-      "totalPrice": 120
+      "favorite": true,
+      "totalPrice": 18
     },
     {
       "id": "3d17",
@@ -51,7 +51,7 @@
       "stock": "10",
       "price": "15",
       "image": "./uploads/pizza1.jpg",
-      "favorite": true,
+      "favorite": false,
       "totalPrice": 0
     }
   ],
