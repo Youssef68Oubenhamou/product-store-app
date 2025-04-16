@@ -48,7 +48,7 @@ function displayProducts(res) {
         card.innerHTML += `<img src="${product.image}" alt="This is a product image...">`;
         card.innerHTML += `<h2>${product.title}</h2>`;
         card.innerHTML += `<p>There is only ${product.stock} of the product in the stock.</p>`;
-        card.innerHTML += `<div class="btn-container"><button>$ ${product.price}</button><button id="add-price">+</button></div>`;
+        card.innerHTML += `<div class="btn-container"><button id="decreasing-price">-</button><button>$ ${product.price}</button><button id="add-price">+</button></div>`;
     
         let favArea = document.createElement("div");
         favArea.className = "heart";
@@ -70,6 +70,43 @@ function displayProducts(res) {
         const heartIcon = favArea.querySelector("i");
 
         const addPriceBtn = card.querySelector("#add-price");
+
+        const decreasePriceBtn = card.querySelector("#decreasing-price");
+
+        decreasePriceBtn.addEventListener("click" , async function () {
+
+            fetch(`http://localhost:3000/products/${product.id}` , {
+
+                method: 'PATCH',
+                body: JSON.stringify({
+
+                    stock: parseInt(product.stock) + 1,
+                    totalPrice: parseInt(product.totalPrice) - parseInt(product.price)
+
+                })
+                
+            })
+                .then((result) => {
+
+                    return result.json();
+
+                })
+                .then((data) => {
+
+                    if (data.ok) {
+
+                        product.price = parseInt(product.price) + 1;
+
+                    }
+
+                })
+                .catch((err) => {
+
+                    console.log(`An Error Occured When trying to update the price , ${err.message}`);
+
+                })
+
+        })
         
         addPriceBtn.addEventListener("click" , async function () {
 

@@ -3,29 +3,29 @@
     {
       "id": "7f7d",
       "title": "Shawarma",
-      "stock": "10",
+      "stock": 20,
       "price": "15",
       "image": "./uploads/shawarma1.png",
       "favorite": true,
-      "totalPrice": 0
+      "totalPrice": -150
     },
     {
       "id": "80b5",
       "title": "Burger",
-      "stock": "22",
+      "stock": 0,
       "price": "19",
       "image": "./uploads/burger1.jpg",
       "favorite": false,
-      "totalPrice": 0
+      "totalPrice": 418
     },
     {
       "id": "526c",
       "title": "union shawarma",
-      "stock": "20",
+      "stock": 9,
       "price": "18",
       "image": "./uploads/shawarma2.jpg",
       "favorite": false,
-      "totalPrice": 0
+      "totalPrice": 198
     },
     {
       "id": "5eee",
@@ -39,11 +39,11 @@
     {
       "id": "0432",
       "title": "coca cola",
-      "stock": 17,
+      "stock": "15",
       "price": "6",
       "image": "./uploads/cocacola.jpg",
       "favorite": true,
-      "totalPrice": 18
+      "totalPrice": 0
     },
     {
       "id": "3d17",
