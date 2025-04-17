@@ -75,36 +75,40 @@ function displayProducts(res) {
 
         decreasePriceBtn.addEventListener("click" , async function () {
 
-            fetch(`http://localhost:3000/products/${product.id}` , {
+            if (parseInt(product.savedStock) != parseInt(product.stock)) {
 
-                method: 'PATCH',
-                body: JSON.stringify({
+                fetch(`http://localhost:3000/products/${product.id}` , {
 
-                    stock: parseInt(product.stock) + 1,
-                    totalPrice: parseInt(product.totalPrice) - parseInt(product.price)
+                    method: 'PATCH',
+                    body: JSON.stringify({
 
+                        stock: parseInt(product.stock) + 1,
+                        totalPrice: parseInt(product.totalPrice) - parseInt(product.price)
+
+                    })
+                    
                 })
-                
-            })
-                .then((result) => {
+                    .then((result) => {
 
-                    return result.json();
+                        return result.json();
 
-                })
-                .then((data) => {
+                    })
+                    .then((data) => {
 
-                    if (data.ok) {
+                        if (data.ok) {
 
-                        product.price = parseInt(product.price) + 1;
+                            product.price = parseInt(product.price) + 1;
 
-                    }
+                        }
 
-                })
-                .catch((err) => {
+                    })
+                    .catch((err) => {
 
-                    console.log(`An Error Occured When trying to update the price , ${err.message}`);
+                        console.log(`An Error Occured When trying to update the price , ${err.message}`);
 
-                })
+                    })
+
+            }
 
         })
         

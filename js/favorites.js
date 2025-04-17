@@ -32,7 +32,7 @@ function displayProducts(res) {
             card.innerHTML += `<img src="${product.image}" alt="This is a product image...">`;
             card.innerHTML += `<h2>${product.title}</h2>`;
             card.innerHTML += `<p>There is only ${product.stock} of the product in the stock.</p>`;
-            card.innerHTML += `<div class="btn-container"><button>$ ${product.price}</button><button>+</button></div>`;
+            card.innerHTML += `<div class="btn-container"><button>$ ${product.price}</button></div>`;
         
             let favArea = document.createElement("div");
             favArea.className = "heart";

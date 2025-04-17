@@ -24,10 +24,11 @@ addBtn.addEventListener("click" , function () {
         
                 title: title.value,
                 stock: stock.value,
-                price: price.value,
+                price: parseInt(price.value),
                 image: `./uploads/${imageName}`,
                 favorite: false,
-                totalPrice: 0
+                totalPrice: 0,
+                savedStock: parseInt(stock.value)
         
             }
             fetch("http://localhost:3000/products",
